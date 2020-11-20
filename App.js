@@ -23,6 +23,23 @@ const soundList = [
 ]
 
 const App = () => {
+
+  const playSound = (sound) => {
+    const soundVar = new Sound(sound, sound.MAIN_BUNDLE, (err) => {
+      if(err) {
+        console.log("NOT ABLE TO PLAY SOUND");
+      }
+    });
+
+    setTimeout(() => {
+      soundVar.play()
+    }, 500)
+    soundVar.play();
+
+    soundVar.release();
+
+  }
+
   return (
     <ScrollView style={styles.container}>
       <Image style={styles.logo} source={require("./assets/logo.png")} />
@@ -30,7 +47,7 @@ const App = () => {
         {soundList.map((sound) => 
           <TouchableOpacity
             key={sound}
-            // onPress={}
+            onPress={() => playSound(sound)}
             style={styles.box}
           >
             <Text style={styles.text}>{sound}</Text>
