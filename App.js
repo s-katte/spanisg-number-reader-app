@@ -67,7 +67,10 @@ const styles = StyleSheet.create({
   }, 
   logo: {
     alignSelf: "center",
-    marginTop: 15
+    marginTop: 45,
+    width: 370,
+    height: 45,
+    marginBottom: 45
   },
   gridContainer: {
     flex: 1,
